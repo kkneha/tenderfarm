@@ -118,10 +118,10 @@ public class create_account extends AppCompatActivity {
 
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+        DatabaseReference myRef = firebaseDatabase.getReference("Users");
         Userdata userdata = new Userdata(name, email, usertype, phone, address);
 
-        myRef.setValue(userdata);
+        myRef.child(firebaseAuth.getUid()).setValue(userdata);
 
     }
 
