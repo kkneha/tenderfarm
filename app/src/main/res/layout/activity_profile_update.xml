@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile_update">
+
+    <ImageView
+        android:id="@+id/upd_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        tools:srcCompat="@tools:sample/avatars"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="120dp"
+        />
+
+    <EditText
+        android:id="@+id/upd_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/upd_img"
+        android:layout_marginTop="10dp"
+        android:hint="  Name"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/input_design"
+        android:textSize="30dp"
+        />
+
+    <EditText
+        android:id="@+id/upd_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/upd_name"
+        android:layout_marginTop="10dp"
+        android:hint="  Email address"
+        android:inputType="textEmailAddress"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/input_design"
+        android:textSize="30dp"
+        />
+
+
+
+    <EditText
+        android:id="@+id/upd_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/upd_email"
+        android:layout_marginTop="8dp"
+        android:hint="  Password"
+        android:inputType="textPassword"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/input_design"
+        android:textSize="30dp"
+        />
+
+    <EditText
+        android:id="@+id/upd_user_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="  User Type: F/I"
+        android:inputType="text"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/upd_password"
+        android:background="@drawable/input_design"
+        android:textSize="30dp"
+        />
+
+    <EditText
+        android:id="@+id/upd_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/upd_user_type"
+        android:hint="Address"
+        android:inputType="textPostalAddress"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/input_design"
+        android:textSize="30dp"
+        />
+
+
+    <EditText
+        android:id="@+id/upd_ph_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/upd_address"
+        android:layout_marginTop="10dp"
+        android:hint="Phone number"
+        android:inputType="phone"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/input_design"
+        android:textSize="30dp"
+        />
+
+
+    <Button
+        android:id="@+id/upd_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="60dp"
+        android:textSize="15dp"
+        android:text="update"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/buttons"
+        android:padding="20dp">
+
+    </Button>
+
+</RelativeLayout>
