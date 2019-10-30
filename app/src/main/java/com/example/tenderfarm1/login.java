@@ -59,7 +59,7 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 validate(Loginid1.getText().toString(),password1.getText().toString());
-                startActivity(new Intent(login.this, second.class));
+                //startActivity(new Intent(login.this, second.class));
             }
         });
 
