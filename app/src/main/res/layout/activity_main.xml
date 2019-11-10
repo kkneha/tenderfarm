@@ -15,6 +15,7 @@
         android:layout_marginLeft="120dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="120dp"
+        android:contentDescription="@string/logo"
         app:srcCompat="@drawable/logo" />
 
     <Button
@@ -25,7 +26,7 @@
         android:layout_marginTop="450dp"
         android:layout_marginRight="100dp"
         android:background="@drawable/buttons"
-        android:text="LOGIN" />
+        android:text="@string/LOGIN" />
 
     <Button
         android:id="@+id/main_reg_button"
@@ -35,6 +36,6 @@
         android:layout_marginTop="520dp"
         android:layout_marginRight="100dp"
         android:background="@drawable/buttons"
-        android:text="REGISTER" />
+        android:text="@string/REGISTER" />
 
 </RelativeLayout>
