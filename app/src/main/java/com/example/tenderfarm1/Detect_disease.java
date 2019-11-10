@@ -26,14 +26,14 @@ import java.io.ByteArrayOutputStream;
 
 public class Detect_disease extends AppCompatActivity {
 
-    private static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 300 ;
+    private static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 300;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detect_order);
+        setContentView(R.layout.activity_detect_disease);
 
-        String product_name="";
+     /*   String product_name="";
         String product_id="";
         String product_price="";
         int inc=1;
@@ -72,9 +72,9 @@ public class Detect_disease extends AppCompatActivity {
         int count = 0;
 
 
-        int MY_INTENT_CLICK=302;
+        int MY_INTENT_CLICK = 302;
         int PICK_IMAGE_REQUEST = 1;
-        int first=1;
+        int first = 1;
 
 
         // Here, thisActivity is the current activity
@@ -129,11 +129,10 @@ public class Detect_disease extends AppCompatActivity {
         }
 
 
-
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
             // Permission is not granted
-        }else {
+        } else {
             new Thread(new Runnable() {
                 public void run() {
 
@@ -146,10 +145,10 @@ public class Detect_disease extends AppCompatActivity {
         }
 
 
-
     }
 
     Uri uri;
+
     public Uri getImageUri(Context inContext, Bitmap inImage) {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
@@ -163,6 +162,7 @@ public class Detect_disease extends AppCompatActivity {
         int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
         return cursor.getString(idx);
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1 || resultCode == RESULT_OK && data != null && data.getData() != null) {
@@ -178,8 +178,6 @@ public class Detect_disease extends AppCompatActivity {
                     Log.e("uri from bitmap", "onActivityResult: " + tempUri);
                     String pth0 = getRealPathFromURI(tempUri);
                     Log.d("path", "onActivityResult: " + pth0);
-
-
 
 
                 } catch (Exception e) {
