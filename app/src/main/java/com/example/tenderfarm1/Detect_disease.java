@@ -1,10 +1,5 @@
 package com.example.tenderfarm1;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -12,57 +7,46 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+import org.tensorflow.lite.Interpreter;
 
 import java.io.ByteArrayOutputStream;
-
+import java.io.File;
 public class Detect_disease extends AppCompatActivity {
 
     private static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 300;
 
-    @Override
+
+
+    File modelFile= new File("C:/Users/Admin/AndroidStudioProjects/tenderfarm/app/src/main/assets/plant_disease_model.tflite");
+    Interpreter obj =new Interpreter(modelFile);
+    String input;
+    String output;
+
+
+    Interpreter interpreter = new Interpreter(modelFile);
+    {
+
+
+        interpreter.run(input, output);
+
+
+        interpreter.close();
+    }
+
+   @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detect_disease);
 
-     /*   String product_name="";
-        String product_id="";
-        String product_price="";
-        int inc=1;
-
-        FirebaseDatabase database=FirebaseDatabase.getInstance();
-
-        DatabaseReference myref=database.getReference("Orders");
-        DatabaseReference ch;
-/*
-        check_order(disease);
-        ch=myref.child("order"+inc);
-        ch.child("product_name").setValue(product_name);
-        ch.child("product_id").setValue(product_id);
-        ch.child("product_price").setValue(product_price);
-        inc++;
-
-    }
-    public String check_order(String t){
-        if (t =="a") {
-            product_name="aaa";
-            product_id="111";
-            product_price="999";
-        } else if(t=="b")
-        {
-            product_name="bbb";
-            product_id="222";
-            product_price="888";
-        }
-        return product_name, product_id,product_price;*/
     }
 
     public void gotocaptureImage(View view) {
@@ -186,6 +170,30 @@ public class Detect_disease extends AppCompatActivity {
             }
         }
     }
+    /*
+    private MappedByteBuffer loadModelFile(Activity activity) throws IOException {
+        AssetFileDescriptor fileDescriptor = activity.getAssets().openFd(getModelPath());
+        FileInputStream inputStream = new FileInputStream(fileDescriptor.getFileDescriptor());
+        FileChannel fileChannel = inputStream.getChannel();
+        long startOffset = fileDescriptor.getStartOffset();
+        long declaredLength = fileDescriptor.getDeclaredLength();
+        return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength);
+    }
+    // Initialization code
+// Create an ImageProcessor with all ops required. For more ops, please
+// refer to the ImageProcessor Architecture section in this README.
+    ImageProcessor imageProcessor =
+            new ImageProcessor.Builder()
+                    .add(new ResizeOp(224, 224, ResizeOp.ResizeMethod.BILINEAR))
+                    .build();
 
+    // Create a TensorImage object, this creates the tensor the TensorFlow Lite
+// interpreter needs
+    TensorImage tImage = new TensorImage(DataType.UINT8);
 
+// Analysis code for every frame
+// Preprocess the image
+tImage.load(bitmap);
+    tImage = imageProcessor.process(tImage);
+*/
 }
