@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button home_log_button,home_reg_button;
+    public Button home_log_button,home_reg_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
