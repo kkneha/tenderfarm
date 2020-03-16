@@ -30,6 +30,7 @@ public class Detect_order extends AppCompatActivity {
         ch.child("product_id").setValue(product_id);
         ch.child("product_price").setValue(product_price);
         inc++;
+        ch.child(firebaseAuth.getUid()).
 
     }
     public String check_order(String t){
